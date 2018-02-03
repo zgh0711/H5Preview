@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--titleView-->
+    <declare-styleable name="TitleView">
+        <attr name="leftIbtn" format="reference"/>
+        <attr name="tabLayout" format="reference"/>
+        <attr name="rightIbtn" format="reference"/>
+        <attr name="rightSecondIbtn" format="reference"/>
+        <attr name="centerIbtn" format="reference"/>
+        <attr name="leftTv" format="string"/>
+        <attr name="leftTv1" format="string"/>
+        <attr name="centerTv" format="string"/>
+        <attr name="rightTv" format="string"/>
+        <attr name="rightTv1" format="string"/>
+    </declare-styleable>
+
+</resources>

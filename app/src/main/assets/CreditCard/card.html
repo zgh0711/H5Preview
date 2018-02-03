@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta content = "yes" name = "apple-mobile-web-app-capable">
+    <meta content = "yes" name = "apple-touch-fullscreen">
+    <meta content = "telephone=no,email=no" name = "format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel = "stylesheet" href = "css/common.css">
+    <link rel = "stylesheet" href = "css/card.css">
+    <link rel = "stylesheet" href = "js/lib/toast/toast.css">
+    <link rel = "stylesheet" href = "js/lib/toast/animate.css">
+    <script type="text/javascript" src="js/lib/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/toast/toast.js"></script>
+    <script type="text/javascript" src="js/lib/flexible.min.js"></script>
+    <title>卡片管理</title>
+</head>
+<body>
+    <div class="flex" style="flex-direction: column;position: relative">
+        <div class="tabs flex">
+            <div id="creditTab" class="flex-1 on">信用卡</div>
+            <div id="savingsTab" class="flex-1">储蓄卡</div>
+        </div>
+    
+        <div class="flex-1" style="margin-top: .13rem;margin-bottom: 2.5rem">
+            <div id="creditList">
+                <div class="item">
+                    <div class="flex card">
+                        <img src = "img/img-front-bankcard.png" alt = "">
+                        <div class="flex-1">
+                            <div class="bank">中国建设银行</div>
+                            <div class="number">**** **** **** 9996</div>
+                        </div>
+                        <img class="del" src = "img/ic-delete.png" alt = "">
+                    </div>
+                
+                    <div class="flex user">
+                        <div>汪迪林</div>
+                        <div>主卡</div>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="savingsList" style="display: none">
+                <div class="item">
+                    <div class="flex card">
+                        <img src = "img/img-front-bankcard.png" alt = "">
+                        <div class="flex-1">
+                            <div class="bank">中国银行</div>
+                            <div class="number">**** **** **** 9996</div>
+                        </div>
+                        <img class="del" src = "img/ic-delete.png" alt = "">
+                    </div>
+                
+                    <div class="flex user">
+                        <div>汪迪林</div>
+                        <div>主卡</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="btn" class="btn-white add">+ 添加信用卡</div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    $(function () {
+        var creditChecked = true;
+        var creditTab = $('#creditTab');
+        var savingsTab = $('#savingsTab');
+        var creditList = $('#creditList');
+        var savingsList = $('#savingsList');
+        var add = $('#btn');
+
+        creditTab.on('click',function () {
+            if (!creditChecked) {
+                creditTab.addClass('on');
+                savingsTab.removeClass('on');
+                creditList.fadeIn(100);
+                savingsList.fadeOut(100);
+                add.html('+ 添加信用卡');
+                creditChecked = true;
+            }
+        });
+
+        savingsTab.on('click',function () {
+            if (creditChecked) {
+                creditTab.removeClass('on');
+                savingsTab.addClass('on');
+                creditList.fadeOut(100);
+                savingsList.fadeIn(100);
+                add.html('+ 添加储蓄卡');
+                creditChecked = false;
+            }
+        });
+
+        add.on('click',function () {
+            if (creditChecked) {
+                window.location.href = 'addCredit.html';
+            }else {
+                window.location.href = 'addSaving.html';
+            }
+        })
+
+        $('.del').on('click',function () {
+            //todo 此处需要增加删除银行卡逻辑
+            toast("删除银行卡")
+        })
+    })
+    
+</script>

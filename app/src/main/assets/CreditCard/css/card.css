@@ -1,0 +1,239 @@
+html {
+    background: #F6F7F9;
+}
+
+.tabs {
+    height: 1.17rem;
+    line-height: 1.17rem;
+    font-size: 14px;
+    color: #151535;
+    text-align: center;
+    background: white;
+}
+[data-dpr="2"] .tabs { 
+    font-size: 28px; 
+} 
+[data-dpr="3"] .tabs { 
+    font-size: 42px; 
+}
+
+.tabs .on {
+    font-weight:bold;
+    border-bottom: 2px solid #151535;
+}
+
+
+.item {
+    background: #FFFFFF;
+    box-shadow: 0 5px 10px 0 rgba(204,204,204,0.30);
+    border-radius: 0.21rem;
+    margin: .53rem .53rem 0 .53rem;
+}
+.item .card {
+    padding: 0.4rem .4rem 0.56rem .4rem;
+}
+.item .card img:first-child {
+    width: 1.17rem;
+    height: 1.17rem;
+    margin-right: 0.19rem;
+    border-radius: 0.59rem;
+}
+.item .card img:last-child {
+    width: .4rem;
+    height: .4rem;
+    align-self: flex-start;
+}
+.item .card .bank {
+    height: .59rem;
+    line-height: .59rem;
+    font-size: 14px;
+    color: #151535;
+}
+[data-dpr="2"] .item .card .bank { 
+    font-size: 28px; 
+} 
+[data-dpr="3"] .item .card .bank { 
+    font-size: 42px; 
+}
+
+.item .card .number {
+    height: .59rem;
+    line-height: .59rem;
+    font-size: 16px;
+    color: #AAAAAA;
+}
+[data-dpr="2"] .item .card .number { 
+    font-size: 32px; 
+} 
+[data-dpr="3"] .item .card .number { 
+    font-size: 48px; 
+}
+
+.item .user {
+    height: 0.99rem;
+    line-height: .99rem;
+    justify-content: space-between;
+    border-top: 1px solid #EEEEEE;
+    font-size: 12px;
+    color: #151535;
+    padding: 0 .4rem;
+}
+[data-dpr="2"] .item .user { 
+    font-size: 24px; 
+} 
+[data-dpr="3"] .item .user { 
+    font-size: 36px; 
+}
+
+
+
+.add {
+    width: 80%;
+    margin: 0 10%;
+    position: fixed;
+    bottom: 0.69rem;
+}
+
+
+
+/*添加信用卡页面*/
+.descLine {
+    height: 1.07rem;
+    line-height: 1.07rem;
+    font-size: 14px;
+    color: #151535;
+    padding-left: 0.8rem;
+}
+[data-dpr="2"] .descLine { 
+    font-size: 28px; 
+} 
+[data-dpr="3"] .descLine { 
+    font-size: 42px; 
+}
+
+.con-input {
+    padding-left: 0.8rem;
+    background: white;
+}
+.con-input .input-line {
+    height: 1.47rem;
+    line-height: 1.47rem;
+    font-size: 14px;
+    color: #151535;
+    padding-right: .4rem;
+}
+[data-dpr="2"] .con-input .input-line { 
+    font-size: 28px; 
+} 
+[data-dpr="3"] .con-input .input-line { 
+    font-size: 42px; 
+}
+.con-input .input-line input{
+    height: 1.47rem;
+    line-height: 1.37rem;
+    font-size: 14px;
+    color: #151535;
+}
+[data-dpr="2"] .con-input .input-line input{
+    font-size: 28px;
+}
+[data-dpr="3"] .con-input .input-line input{
+    font-size: 42px;
+}
+
+.con-input .input-line .left {
+    margin-right: 0.56rem;
+}
+.con-input .input-line img {
+    width: .4rem;
+    height: .4rem;
+    align-self: center;
+}
+
+
+.save-head {
+    height: 5.12rem;
+    background: white;
+    padding: .4rem .8rem;
+}
+.save-head img {
+    width: 8.4rem;
+    /*height: 5.12rem;*/
+
+}
+
+
+/*实名认证页面*/
+.head-area {
+    background: white;
+    padding: 0.69rem 1.07rem 0.53rem 1.07rem;
+}
+.head-area .step1 {
+    font-size: 16px;
+    color: #1EC084;
+    padding-left: 0.8rem;
+    background: url("../img/ic-step1.png") no-repeat left center;
+    background-size: 0.53rem;
+}
+.head-area .step2 {
+    font-size: 16px;
+    color: #CCCCCC;
+    padding-left: .8rem;
+    background: url("../img/ic-step2.png") no-repeat left center;
+    background-size: .53rem;
+}
+.head-area .line {
+    font-size: 16px;
+    color: #CCCCCC;
+}
+[data-dpr="2"] .head-area .step1 {
+    font-size: 32px; 
+} 
+[data-dpr="3"] .head-area .step1 {
+    font-size: 48px; 
+}
+[data-dpr="2"] .head-area .step2 {
+    font-size: 32px;
+}
+[data-dpr="3"] .head-area .step2 {
+    font-size: 48px;
+}
+[data-dpr="2"] .head-area .line {
+    font-size: 32px;
+}
+[data-dpr="3"] .head-area .line {
+    font-size: 48px;
+}
+
+.head-certify {
+    margin-top: 0.69rem;
+    font-size: 10px;
+    color: #AAAAAA;
+    justify-content: space-between;
+}
+[data-dpr="2"] .head-certify { 
+    font-size: 20px; 
+} 
+[data-dpr="3"] .head-certify { 
+    font-size: 30px; 
+}
+
+.head-certify .scan {
+    width: 3.55rem;
+}
+.head-certify img {
+    width: 3.55rem;
+    height: 2.08rem;
+}
+.head-certify .scan div {
+    font-size: 10px;
+    color: #AAAAAA;
+    margin-top: 0.16rem;
+    text-align: center;
+}
+[data-dpr="2"] .head-certify .scan div { 
+    font-size: 20px; 
+} 
+[data-dpr="3"] .head-certify .scan div { 
+    font-size: 30px; 
+}

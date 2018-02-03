@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta content = "yes" name = "apple-mobile-web-app-capable">
+    <meta content = "yes" name = "apple-touch-fullscreen">
+    <meta content = "telephone=no,email=no" name = "format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel = "stylesheet" href = "css/common.css">
+    <link rel = "stylesheet" href = "css/card.css">
+    <link rel = "stylesheet" href = "js/lib/toast/toast.css">
+    <link rel = "stylesheet" href = "js/lib/toast/animate.css">
+    <script type="text/javascript" src="js/lib/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/toast/toast.js"></script>
+    <script type="text/javascript" src="js/lib/flexible.min.js"></script>
+    <title>添加信用卡</title>
+</head>
+<body>
+    <div class="descLine">请绑定信用卡，此信用卡用于取现刷卡</div>
+    
+    <div class="con-input">
+        <div class="flex input-line border-b">
+            <div style="margin-right: 1.07rem">持卡人</div>
+            <input type = "text" placeholder="请输入持卡人姓名">
+        </div>
+        <div class="flex input-line">
+            <div style="margin-right: 1.07rem">身份证</div>
+            <input type = "text" placeholder="请输入持卡人身份证号">
+        </div>
+    </div>
+    
+    <div class="con-input" style="margin-top: .27rem">
+        <div class="flex input-line border-b">
+            <div style="margin-right: 1.07rem">卡号&nbsp;&nbsp;&nbsp;</div>
+            <input class="flex-1" type = "text" placeholder="请输入卡号或通过扫描识别">
+            <img src = "img/ic-camera.png" alt = "" onclick="scan()">
+        </div>
+        <div class="flex input-line">
+            <div style="margin-right: 1.07rem">手机号</div>
+            <input type = "text" placeholder="请输入银行预留手机号">
+        </div>
+    </div>
+    
+    <div class="btn-gray" style="margin-top: 1.71rem" onclick="addConfirm()">确认</div>
+</body>
+</html>
+
+<script>
+    function scan() {
+        //todo 此处需要调用扫描功能扫描银行卡
+        toast("扫描银行卡")
+    }
+    
+    function addConfirm() {
+        //todo 跳转前需要先判断是否能够提交，可提交时将样式换为 btn-main
+        window.location.href = 'home.html';
+    }
+</script>

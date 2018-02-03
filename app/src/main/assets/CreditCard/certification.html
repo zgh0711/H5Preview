@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta content = "yes" name = "apple-mobile-web-app-capable">
+    <meta content = "yes" name = "apple-touch-fullscreen">
+    <meta content = "telephone=no,email=no" name = "format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel = "stylesheet" href = "css/common.css">
+    <link rel = "stylesheet" href = "css/card.css">
+    <link rel = "stylesheet" href = "js/lib/toast/toast.css">
+    <link rel = "stylesheet" href = "js/lib/toast/animate.css">
+    <script type="text/javascript" src="js/lib/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/toast/toast.js"></script>
+    <script type="text/javascript" src="js/lib/flexible.min.js"></script>
+    <title>实名认证</title>
+</head>
+<body>
+    <div class="head-area">
+        <div class="flex" style="justify-content: space-around;text-align: center">
+            <div class="step1">身份证认证 </div>
+            <div class="line">- - -</div>
+            <div class="step2">人脸识别</div>
+        </div>
+        
+        <div class="flex head-certify">
+            <div class="scan" >
+                <img src = "img/img-card-front.png" alt = "" onclick="scan()">
+                <div >轻触添加身份证正面照片</div>
+            </div>
+    
+            <div class="scan" >
+                <img src = "img/img-card-back.png" alt = "" onclick="scan()">
+                <div >轻触添加身份证背面照片</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="descLine">请确认以下信息，如若有误请点击上图重新拍摄</div>
+    
+    <div class="con-input">
+        <div class="flex input-line border-b">
+            <div class="left">姓名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <input type = "text" placeholder="请输入姓名">
+        </div>
+        <div class="flex input-line border-b">
+            <div class="left">身份证&nbsp;&nbsp;&nbsp;</div>
+            <input type = "text" placeholder="请输入身份证号">
+        </div>
+    </div>
+    
+    <div class="con-input" style="margin-top: .27rem">
+        <div class="flex input-line border-b">
+            <div class="left">签发机关</div>
+            <input type = "text" placeholder="请输入身份证签发机关">
+        </div>
+        <div class="flex input-line">
+            <div class="left">有效期&nbsp;&nbsp;&nbsp;</div>
+            <input type = "text" placeholder="请输入身份证有效期">
+        </div>
+    </div>
+    
+    <div class="btn-gray" style="margin-top: 1.71rem" onclick="addConfirm()">下一步</div>
+</body>
+</html>
+
+<script>
+    function scan() {
+        //todo 此处需要调用扫描功能扫描银行卡
+        toast("扫描银行卡")
+    }
+
+    function addConfirm() {
+        //todo 跳转前需要先判断是否能够提交，可提交时将样式换为 btn-main
+        window.location.href = 'home.html';
+    }
+</script>

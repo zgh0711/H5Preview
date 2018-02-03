@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta content = "yes" name = "apple-mobile-web-app-capable">
+    <meta content = "yes" name = "apple-touch-fullscreen">
+    <meta content = "telephone=no,email=no" name = "format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel = "stylesheet" href = "css/common.css">
+    <link rel = "stylesheet" href = "css/index.css">
+    <link rel = "stylesheet" href = "js/lib/toast/toast.css">
+    <link rel = "stylesheet" href = "js/lib/toast/animate.css">
+    <script type="text/javascript" src="js/lib/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/toast/toast.js"></script>
+    <script type="text/javascript" src="js/lib/flexible.min.js"></script>
+    <title>注册</title>
+</head>
+<body>
+    <div class="con-main">
+        <div class="flex input-login" style="margin-top: 2.67rem">
+            <img src = "img/ic-person.png" alt = "">
+            <input type = "text" placeholder="请输入手机号码">
+        </div>
+        
+        <div class="flex input-login">
+            <img src = "img/ic-number.png" alt = "">
+            <input type = "text" placeholder="请输入验证码">
+            <div class="getVerify" onclick="getVerify()">获取验证码</div>
+        </div>
+        
+        <div class="flex input-login" style="margin-bottom: 1.62rem">
+            <img src = "img/ic-pwd.png" alt = "">
+            <input type = "text" placeholder="请输入登录密码">
+        </div>
+        
+        
+        <div class="btn-main" onclick="next()">下一步</div>
+        
+        <div class="protocol">点击“下一步”即表示您同意
+            <span onclick="showProtocol()">《用户协议》</span>
+        </div>
+        
+    </div>
+
+    <!--用户协议内容弹框-->
+    <div class="bg-protocol" style="display: none">
+        <div class="flex con-content">
+                <div class="title">用户服务协议</div>
+                <div class="content">
+                    <pre>
+1、《用户服务协议》（以下简称“本协议”）是您自愿与FINSAAS平台（以下简称“本平台”）的使用所签订的有效合约。您通过网络页面点击确认本协议或以其他方式选择接受本协议，即表示您与本平台已达成协议并同意接受本协议的全部约定内容。
+2、在您接受本协议之前，请您仔细阅读本协议的全部内容，如您不同意接受本协议的任意内容，或者无法准确理解相关条款含义的，请不要进行后续操作。如果您对本协议的条款有疑问的，请通过客服渠道进行询问（FINSAAS客服电话为400-999-6153），FINSAAS将向您解释条款内容。
+3、您同意，本平台有权随时对本协议内容进行单方面的变更，无需另行单独通知您；若您在本协议内容公告变更生效后继续使用本服务的，表示您已充分阅读、理解并接受变更修改后的协议内容，也将遵循变更修改后的协议内容使用本服务；若您不同意变更修改后的协议内容，您应在变更生效前停止使用本服务。
+
+二、双方权利义务
+
+1、您应确保您在使用本服务时的银行卡为您本人的银行卡，确保您使用银行卡的行为合法、有效，未侵犯任何第三方合法权益；否则因此造成支付通道、平台、持卡人损失的，您应负责赔偿并承担全部法律责任。
+2、您应确保开通本服务所提供的手机号码为本人所有，并授权支付通道方可以通过第三方渠道对您所提供手机号码的真实性、有效性进行核实。
+3、您应妥善保管银行卡、卡号、密码、发卡行预留的手机号码等与银行卡有关的一切信息。如您遗失或泄漏前述信息，您应及时通知发卡行及，以减少可能发生的损失。无论是否已通知发卡行，因您的原因所致损失需由您自行承担。
+4、您在使用本服务时，应当认真确认交易信息，包括且不限于商品名称、数量、金额等，并按支付通道方业务流程发出约定的指令。您认可和同意：您发出的指令不可撤回或撤销，支付通道方一旦根据您的指令委托银行或第三方从银行卡中划扣资金给收款人，您不应以非本人意愿交易或其他任何原因要求易支付通道方和本平台退款或承担其他责任。
+5、您不应将本服务用于任何违反国家相关法律法规或本协议的目的。
+6、您在对使用本服务过程中发出指令的真实性及有效性承担全部责任；您承诺，支付通道方和本平台依照您的指令进行操作的一切风险由您承担。
+7、您认可并以本平台系统平台记录的数据为准。
+8、同时您授权支付通道方有权留存您在支付网站填写的相应信息，以供后续向您持续性地提供相应服务（包括但不限于将本信息用于向您推广、提供其他更加优质的产品或服务）。
+9、出现下列情况之一的，本平台有权立即终止您使用相关服务而无需承担任何责任：
+ （1）违反本协议的约定；
+ （2）将本服务用于非法目的；
+ （3）违反支付公司/或其他关联公司网站的条款、协议、规则、通告等相关规定，而被上述任一网站终止提供服务的；
+ （4）支付通道方或平台认为向您提供本服务存在风险的；
+ （5）您的银行卡无效、有效期届满或注销（如有）。
+
+三、承诺与保证
+
+1、您保证使用本服务过程中提供的如姓名、身份证号、银行卡卡号及银行预留手机号等信息真实、准确、完整、有效。本平台按照您设置的相关信息为您提供相应服务，对于因您提供信息不真实或不完整所造成的损失由您自行承担。
+2、您授权支付通道方在您使用本服务期间或本服务终止后，有权保留您在使用本服务期间所形成的相关信息数据，同时该授权不可撤销。
+
+四、其他条款
+
+1、您同意，本协议适用中华人民共和国大陆地区法律。因本平台与您就本协议的签订、履行或解释发生争议，双方应努力友好协商解决。如协商不成，本平台同意由平台经营住所地法院管辖审理双方的纠纷或争议。
+2、本协议内容包括协议正文及所有平台以及支付通道方已经发布的或将来可能发布的支付服务的使用规则。所有规则为本协议不可分割的一部分，与协议正文具有相同法律效力。若您在本协议内容发生修订后，继续使用本服务的，则视为您同意最新修订的协议内容；否则您须立即停止使用本服务。
+3、您同意，本协议之效力、解释、变更、执行与争议解决均适用中华人民共和国法律，没有相关法律规定的，参照通用国际商业惯例和（或）行业惯例。
+4、本协议部分内容被有管辖权的法院认定为违法或无效的，不因此影响其他内容的效力。
+5、本协议未尽事宜，您需遵守另行公布的相关服务协议及相关规则。
+
+                    </pre>
+                </div>
+                <div class="btn-ok" onclick="ok()">确认</div>
+            </div>
+            
+    </div>
+    
+</body>
+</html>
+
+<script>
+    function next() {
+        window.location.href = 'home.html';
+    }
+    
+    function getVerify() {
+        toast("获取验证码")
+    }
+    
+    function showProtocol() {
+        $('.bg-protocol').fadeIn(100);
+        $('.con-protocol').fadeIn(100);
+    }
+    function ok() {
+        $('.con-protocol').fadeOut(100);
+        $('.bg-protocol').fadeOut(100);
+    }
+</script>

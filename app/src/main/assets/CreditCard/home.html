@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta content = "yes" name = "apple-mobile-web-app-capable">
+    <meta content = "yes" name = "apple-touch-fullscreen">
+    <meta content = "telephone=no,email=no" name = "format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel = "stylesheet" href = "css/common.css">
+    <link rel = "stylesheet" href = "css/home.css">
+    <link rel = "stylesheet" href = "js/lib/toast/toast.css">
+    <link rel = "stylesheet" href = "js/lib/toast/animate.css">
+    <link rel = "stylesheet" href = "js/lib/swiper/swiper.min.css">
+    <script type="text/javascript" src="js/lib/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/toast/toast.js"></script>
+    <script type="text/javascript" src="js/lib/flexible.min.js"></script>
+    <!--<script type="text/javascript" src="js/lib/swiper/swiper.min.js"></script>-->
+    <title>信用卡取现</title>
+</head>
+<body>
+    <div class="flex headLine">
+        <a href = "customerCenter.html" style="color: #232933;">
+            <div class="customerCenter"></div>
+        </a>
+        <a href = "message.html" style="color: #232933;">
+            <div class="message">
+                <div class="unReader"></div>
+            </div>
+        </a>
+    </div>
+
+    <div class="banner-area">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide banner">
+                    <div class="flex use">
+                        <div>取现信用卡</div>
+                        <img src = "img/ic-help.png" alt = "" onclick="help()">
+                    </div>
+                    
+                    <a href = "addCredit.html">
+                        <div class="flex addImg">
+                            <img src = "img/ic-add.png" alt = "">
+                        </div>
+                        <div class="addCard">添加信用卡</div>
+                    </a>
+                </div>
+                
+                <div class="swiper-slide banner">
+                    <div class="flex use">
+                        <div>取现信用卡</div>
+                        <img src = "img/ic-help.png" alt = "" onclick="help()">
+                    </div>
+    
+                    <div class="flex addImg-added">
+                        <img src = "img/ic-cmbc.png" alt = "">
+                    </div>
+                    <div class="bankName">招商银行</div>
+                    <div class="lastNum">尾号9996</div>
+                    <div class="change" onclick="changeCard()">更换</div>
+                </div>
+                
+            </div>
+            
+            <!--<div class="swiper-pagination"></div>-->
+        </div>
+        
+    </div>
+    
+    <div class="content-home">
+        <div class="flex bankCard">
+            <div>到账储蓄卡</div>
+            <img src = "img/ic-ccb.png" alt = "">
+            <div class="c-main">中国建设银行（9988）</div>
+        </div>
+        
+        <div class="amount-get">取现金额</div>
+    
+        <div class="flex amount">
+            <div style="color: #151535;margin-right: .53rem">￥</div>
+            <input class="flex-1" type = "number" placeholder="0.00">
+        </div>
+        
+        <div class="desc">
+            费率0.55+元，有积分，单笔5万秒到账
+        </div>
+    </div>
+    
+    <div class="btn-main" onclick="nextStep()">下一步</div>
+    
+    
+    <script src="js/lib/swiper/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 20,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+</html>
+
+<script>
+    function nextStep() {
+        toast("下一步")
+    }
+    
+    function help() {
+        toast("帮助")
+    }
+    
+    function changeCard() {
+        toast("更换信用卡")
+    }
+</script>

@@ -1,0 +1,59 @@
+
+html {
+    background: #F6F7F9;
+}
+
+.trad-month {
+    height: 1.07rem;
+    line-height: 1.07rem;
+    margin-left: 0.8rem;
+    font-size: 14px;
+    color: #232933
+}
+[data-dpr="2"] .trad-month { 
+    font-size: 28px; 
+} 
+[data-dpr="3"] .trad-month { 
+    font-size: 42px; 
+}
+
+
+.trad-list {
+    background: white;
+    padding-left: 0.53rem;
+}
+.trad-list .item {
+    padding: 0.37rem 0.53rem 0.4rem 0.27rem;
+    background: url("../img/ic-trad-color.png") no-repeat left .27rem center;
+    background-size: 0.53rem 0.45rem;
+}
+.trad-list .item img {
+    width: .53rem;
+    height: .45rem;
+    margin-right: 0.85rem;
+    align-self: center;
+}
+.trad-list .item .rightTop {
+    justify-content: space-between;
+    font-size: 16px;
+    color: #151535;
+}
+[data-dpr="2"] .trad-list .item .rightTop { 
+    font-size: 32px; 
+} 
+[data-dpr="3"] .trad-list .item .rightTop { 
+    font-size: 48px; 
+}
+
+.trad-list .item .rightBottom {
+    justify-content: space-between;
+    margin-top: 0.13rem;
+    font-size: 14px;
+    color: #AAAAAA;
+}
+[data-dpr="2"] .trad-list .item .rightBottom { 
+    font-size: 28px; 
+} 
+[data-dpr="3"] .trad-list .item .rightBottom { 
+    font-size: 42px; 
+}

@@ -1,0 +1,102 @@
+apply plugin: 'com.android.application'
+
+def buildTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.preview.android"
+        minSdkVersion 16
+        targetSdkVersion 21
+        versionCode 9
+        versionName "1.6"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+
+
+    //添加我们的签名文件配置
+    signingConfigs {
+        debug {
+//            storeFile file("mustbuy_key.jks")//指定签名文件
+//            storePassword "android"//密码
+//            keyAlias "mustbuy"//关键字
+//            keyPassword "android"//关键字的密码
+        }
+        release {
+            //这样写需要把 key 文件放在 app 目录下
+            storeFile file("tabeauty-key")//指定签名文件
+            storePassword "android"//密码
+            keyAlias "shanghai"//关键字
+            keyPassword "android"//关键字的密码
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+        }
+        release {
+            signingConfig signingConfigs.release
+            zipAlignEnabled true //Zipalign优化
+            minifyEnabled false //代码混淆设置为true
+            shrinkResources minifyEnabled
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //修改APK生成名字  通过android.applicationVariants索引来遍历所有的 build variant
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName  = "AMhaigou_v${variant.versionName}_${buildType.name}_${buildTime()}.apk"
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:0.5'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:design:26.0.0-beta1'
+    implementation 'com.android.support:support-v4:26.0.0-beta1'
+    implementation 'com.android.support:appcompat-v7:26.0.0-beta1'
+    //    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    //    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
+    implementation 'me.yokeyword:fragmentation:1.1.8'
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.google.zxing:core:3.2.0'
+    implementation 'com.blankj:utilcode:1.9.8'
+    implementation files('libs/tbs_sdk.jar')
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.3'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.github.jokermonn:permissions4m:2.1.2-lib'
+    annotationProcessor 'com.github.jokermonn:permissions4m:2.1.2-processor'
+    implementation files('libs/MobCommons-2017.1201.1507.jar')
+    implementation files('libs/MobTools-2017.1201.1507.jar')
+    implementation files('libs/ShareSDK-Core-3.1.2.jar')
+    implementation files('libs/ShareSDK-QQ-3.1.2.jar')
+    implementation files('libs/ShareSDK-QZone-3.1.2.jar')
+    implementation files('libs/ShareSDK-Wechat-3.1.2.jar')
+    implementation files('libs/ShareSDK-Wechat-Core-3.1.2.jar')
+    implementation files('libs/ShareSDK-Wechat-Moments-3.1.2.jar')
+}

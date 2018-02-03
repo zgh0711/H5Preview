@@ -1,0 +1,224 @@
+html {
+    background: #F6F7F9;
+}
+
+.headLine {
+    padding: 0 0.4rem;
+    /*font-size: 12px;*/
+    color: #232933;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.headLine .customerCenter {
+    height: 1.07rem;
+    line-height: 1.07rem;
+    padding-left: 0.77rem;
+    background: url("../img/ic-customerCenter.png") no-repeat left center;
+    background-size: 0.64rem;
+}
+.headLine .message {
+    position: relative;
+    height: 1.07rem;
+    line-height: 1.07rem;
+    padding-left: 0.77rem;
+    background: url("../img/ic-message.png") no-repeat left center;
+    background-size: 0.64rem;
+}
+.headLine .message .unReader {
+    position: absolute;
+    width: .2rem;
+    height: .2rem;
+    border-radius: .1rem;
+    background: red;
+    top: .2rem;
+    right: .2rem;
+}
+
+.banner-area {
+    /*height: 13.44rem;*/
+    background: white;
+    padding: 0.31rem 0;
+}
+.banner-area .banner {
+    width: 80%;
+    height: 5.12rem;
+    background: url("../img/img-bg-add.png") no-repeat center;
+    background-size: 100%;
+    position: relative;
+}
+.banner-area .banner .use {
+    font-size: 14px;
+    color: #FFFFFF;
+    padding: .4rem .4rem 0 .4rem;
+    justify-content: space-between;
+}
+[data-dpr="2"] .banner-area .banner .use { 
+    font-size: 28px; 
+} 
+[data-dpr="3"] .banner-area .banner .use { 
+    font-size: 42px; 
+}
+.banner-area .banner .use img {
+    width: .35rem;
+    height: .35rem;
+}
+
+
+.banner-area .banner .addImg {
+    margin-top: 1.19rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.banner-area .banner .addImg img {
+    width: 0.91rem;
+    height: 0.91rem;
+}
+.banner-area .banner .addCard {
+    text-align: center;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-top: 0.37rem;
+}
+[data-dpr="2"] .banner-area .banner .addCard { 
+    font-size: 36px; 
+} 
+[data-dpr="3"] .banner-area .banner .addCard { 
+    font-size: 54px; 
+}
+
+.banner-area .banner .addImg-added {
+    margin-top: .4rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.banner-area .banner .addImg img {
+    width: 1rem;
+    height: 1rem;
+}
+.banner-area .banner .bankName {
+    text-align: center;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-top: 0.32rem;
+}
+[data-dpr="2"] .banner-area .banner .bankName {
+    font-size: 32px;
+}
+[data-dpr="3"] .banner-area .banner .bankName {
+    font-size: 48px;
+}
+.banner-area .banner .lastNum {
+    text-align: center;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-top: .05rem;
+}
+[data-dpr="2"] .banner-area .banner .lastNum {
+    font-size: 24px;
+}
+[data-dpr="3"] .banner-area .banner .lastNum {
+    font-size: 36px;
+}
+.banner-area .banner .change {
+    position: absolute;
+    bottom: .4rem;
+    right: .4rem;
+    height: .54rem;
+    line-height: .53rem;
+    padding: 0 .27rem;
+    text-align: right;
+    font-size: 10px;
+    color: #FFFFFF;
+    border: 1px solid white;
+    border-radius: .27rem;
+}
+[data-dpr="2"] .banner-area .banner .change {
+    font-size: 20px;
+}
+[data-dpr="3"] .banner-area .banner .change {
+    font-size: 30px;
+}
+
+
+.content-home {
+    background: white;
+    padding: 0 0.4rem;
+    border-radius: 0.11rem;
+    margin: .4rem .4rem 0.51rem .4rem;
+}
+.content-home .bankCard {
+    height: 1.49rem;
+    line-height: 1.49rem;
+    font-size: 14px;
+    color: #AAAAAA;
+    border-bottom: 1px solid #F3F3F3;
+}
+[data-dpr="2"] .content-home .bankCard { 
+    font-size: 28px; 
+} 
+[data-dpr="3"] .content-home .bankCard { 
+    font-size: 42px; 
+}
+.content-home .bankCard img {
+    width: .53rem;
+    height: .53rem;
+    align-self: center;
+    margin-left: .53rem;
+    margin-right: .13rem;
+}
+
+
+.content-home .amount-get {
+    font-size: 14px;
+    color: #AAAAAA;
+    margin-top: 0.43rem;
+}
+[data-dpr="2"] .content-home .amount-get { 
+    font-size: 28px; 
+} 
+[data-dpr="3"] .content-home .amount-get { 
+    font-size: 42px; 
+}
+
+.content-home .amount {
+    height: 1.57rem;
+    line-height: 1.57rem;
+    font-size: 42px;
+    color: #AAAAAA;
+    border-bottom: 1px solid #F3F3F3;
+}
+[data-dpr="2"] .content-home .amount { 
+    font-size: 84px; 
+} 
+[data-dpr="3"] .content-home .amount { 
+    font-size: 126px; 
+}
+
+
+.content-home .amount input {
+    width: 0;
+    font-size: 42px;
+    color: #151535;
+}
+[data-dpr="2"] .content-home .amount input{
+    font-size: 84px;
+}
+[data-dpr="3"] .content-home .amount input{
+    font-size: 126px;
+}
+
+.content-home .desc {
+    height: 1.47rem;
+    line-height: 1.47rem;
+    font-size: 12px;
+    color: #AAAAAA;
+}
+[data-dpr="2"] .content-home .desc { 
+    font-size: 24px; 
+} 
+[data-dpr="3"] .content-home .desc { 
+    font-size: 36px; 
+}

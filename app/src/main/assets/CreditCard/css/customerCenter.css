@@ -1,0 +1,110 @@
+html {
+    background: #F6F7F9;
+}
+
+.head {
+    height: 2.67rem;
+    background: white;
+}
+.head img {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 0 0.53rem;
+    border-radius: 0.8rem;
+    align-self: center;
+}
+.head .userInfo {
+    align-self: center;
+    font-size: 16px;
+    color: #151535;
+}
+[data-dpr="2"] .head div { 
+    font-size: 32px; 
+} 
+[data-dpr="3"] .head div { 
+    font-size: 48px; 
+}
+.head .userInfo .verify{
+    font-size: 10px;
+    color: #1EC084;
+    border: 1px solid #1EC084;
+    border-radius: .27rem;
+    height: .54rem;
+    line-height: .54rem;
+    padding: 0 .27rem;
+    margin-bottom: .13rem;
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+}
+[data-dpr="2"] .head .userInfo .verify {
+    font-size: 20px;
+}
+[data-dpr="3"] .head .userInfo .verify {
+    font-size: 30px;
+}
+
+.head .userInfo .unVerify{
+    font-size: 10px;
+    color: #CCCCCC;
+    border: 1px solid #CCCCCC;
+    border-radius: .27rem;
+    height: .54rem;
+    line-height: .54rem;
+    padding: 0 .27rem;
+    margin-bottom: .13rem;
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+}
+[data-dpr="2"] .head .userInfo .unVerify {
+    font-size: 20px;
+}
+[data-dpr="3"] .head .userInfo .unVerify {
+    font-size: 30px;
+}
+
+
+
+.con-center {
+    margin-top: 0.35rem;
+    padding-left: .75rem;
+    background: white;
+}
+.con-center .line {
+    height: 1.47rem;
+    line-height: 1.47rem;
+    font-size: 14px;
+    color: #151535;
+    padding-left: 0.99rem;
+}
+[data-dpr="2"] .con-center .line { 
+    font-size: 28px; 
+} 
+[data-dpr="3"] .con-center .line { 
+    font-size: 42px; 
+}
+
+.con-center .bg-name {
+    background: url("../img/ic-name.png") no-repeat left center;
+    background-size: 0.64rem;
+}
+.con-center .bg-card {
+    background: url("../img/ic-card.png") no-repeat left center;
+    background-size: .64rem;
+}
+.con-center .bg-trad {
+    background: url("../img/ic-trad.png") no-repeat left center;
+    background-size: .64rem;
+}
+.con-center .bg-insurance {
+    background: url("../img/ic-insurance.png") no-repeat left center;
+    background-size: .64rem;
+}
+
+.quit {
+    width: 80%;
+    margin: 0 10%;
+    position: fixed;
+    bottom: 0.64rem;
+}

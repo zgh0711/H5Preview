@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta content = "yes" name = "apple-mobile-web-app-capable">
+    <meta content = "yes" name = "apple-touch-fullscreen">
+    <meta content = "telephone=no,email=no" name = "format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel = "stylesheet" href = "css/common.css">
+    <link rel = "stylesheet" href = "css/index.css">
+    <link rel = "stylesheet" href = "js/lib/toast/toast.css">
+    <link rel = "stylesheet" href = "js/lib/toast/animate.css">
+    <script type="text/javascript" src="js/lib/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/toast/toast.js"></script>
+    <script type="text/javascript" src="js/lib/flexible.min.js"></script>
+    <title>登录</title>
+</head>
+<body>
+    <div class="con-main">
+        <div class="flex input-login" style="margin-top: 2.67rem">
+            <img src = "img/ic-person.png" alt = "">
+            <input type = "text" placeholder="请输入手机号码">
+        </div>
+    
+        <!--<div class="flex input-login">-->
+        <!--<img src = "img/ic-number.png" alt = "">-->
+        <!--<input type = "text" placeholder="请输入验证码">-->
+        <!--</div>-->
+    
+        <div class="flex input-login" style="margin-bottom: 1.62rem">
+            <img src = "img/ic-pwd.png" alt = "">
+            <input type = "text" placeholder="请输入登录密码">
+        </div>
+        
+        
+        <div class="btn-main" onclick="login()">登录</div>
+        
+        <div class="btn-main" onclick="register()" style="margin-top: 1.07rem">注册</div>
+        
+        <div class="forgetPwd">忘记密码</div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    function login() {
+        window.location.href = 'home.html';
+    }
+    function register() {
+        window.location.href = 'register.html';
+    }
+</script>
