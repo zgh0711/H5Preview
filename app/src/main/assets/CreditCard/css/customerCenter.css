@@ -28,10 +28,8 @@ html {
     font-size: 10px;
     color: #1EC084;
     border: 1px solid #1EC084;
-    border-radius: .27rem;
-    height: .54rem;
-    line-height: .54rem;
-    padding: 0 .27rem;
+    border-radius: .2rem;
+    padding: .05rem .27rem;
     margin-bottom: .13rem;
     display:inline-block;
     *display:inline;
@@ -48,10 +46,8 @@ html {
     font-size: 10px;
     color: #CCCCCC;
     border: 1px solid #CCCCCC;
-    border-radius: .27rem;
-    height: .54rem;
-    line-height: .54rem;
-    padding: 0 .27rem;
+    border-radius: .2rem;
+    padding: .05rem .27rem;
     margin-bottom: .13rem;
     display:inline-block;
     *display:inline;

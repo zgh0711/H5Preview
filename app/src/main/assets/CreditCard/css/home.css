@@ -89,14 +89,14 @@ html {
 }
 
 .banner-area .banner .addImg-added {
-    margin-top: .4rem;
+    margin-top: .64rem;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
 }
-.banner-area .banner .addImg img {
-    width: 1rem;
-    height: 1rem;
+.banner-area .banner .addImg-added img {
+    width: 1.12rem;
+    height: 1.12rem;
 }
 .banner-area .banner .bankName {
     text-align: center;
@@ -126,14 +126,12 @@ html {
     position: absolute;
     bottom: .4rem;
     right: .4rem;
-    height: .54rem;
-    line-height: .53rem;
-    padding: 0 .27rem;
+    border-radius: .2rem;
+    padding: .05rem .27rem;
     text-align: right;
     font-size: 10px;
     color: #FFFFFF;
     border: 1px solid white;
-    border-radius: .27rem;
 }
 [data-dpr="2"] .banner-area .banner .change {
     font-size: 20px;
