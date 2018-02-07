@@ -19,7 +19,7 @@
     <div class="con-main">
         <div class="flex input-login" style="margin-top: 2.67rem">
             <img src = "img/ic-person.png" alt = "">
-            <input type = "text" placeholder="请输入手机号码">
+            <input type = "text" placeholder="请输入手机号码" required>
         </div>
     
         <!--<div class="flex input-login">-->
@@ -29,7 +29,7 @@
     
         <div class="flex input-login" style="margin-bottom: 1.62rem">
             <img src = "img/ic-pwd.png" alt = "">
-            <input type = "text" placeholder="请输入登录密码">
+            <input type = "password" placeholder="请输入登录密码" required>
         </div>
         
         
@@ -37,7 +37,7 @@
         
         <div class="btn-main" onclick="register()" style="margin-top: 1.07rem">注册</div>
         
-        <div class="forgetPwd">忘记密码</div>
+        <div class="forgetPwd" onclick="forgetPwd()">忘记密码</div>
     </div>
     
 </body>
@@ -49,5 +49,8 @@
     }
     function register() {
         window.location.href = 'register.html';
+    }
+    function forgetPwd() {
+        window.location.href = 'reset.html';
     }
 </script>

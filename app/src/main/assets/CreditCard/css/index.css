@@ -56,7 +56,10 @@
 [data-dpr="3"] .input-login .getVerify { 
     font-size: 36px; 
 }
-
+.input-login .getVerify-gray {
+    color: #CCCCCC;
+    border: 1px solid #CCCCCC;
+}
 
 .protocol {
     font-size: 12px;

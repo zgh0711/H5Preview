@@ -97,6 +97,10 @@ html {
     background: url("../img/ic-insurance.png") no-repeat left center;
     background-size: .64rem;
 }
+.con-center .bg-reset {
+    background: url("../img/ic-pwd.png") no-repeat left center;
+    background-size: .64rem;
+}
 
 .quit {
     width: 80%;

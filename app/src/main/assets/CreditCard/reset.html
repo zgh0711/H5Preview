@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta content = "yes" name = "apple-mobile-web-app-capable">
+    <meta content = "yes" name = "apple-touch-fullscreen">
+    <meta content = "telephone=no,email=no" name = "format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel = "stylesheet" href = "css/common.css">
+    <link rel = "stylesheet" href = "css/index.css">
+    <link rel = "stylesheet" href = "js/lib/toast/toast.css">
+    <link rel = "stylesheet" href = "js/lib/toast/animate.css">
+    <script type="text/javascript" src="js/lib/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/toast/toast.js"></script>
+    <script type="text/javascript" src="js/lib/flexible.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <title>重设密码</title>
+</head>
+<body>
+    <div class="con-main">
+        <div class="flex input-login" style="margin-top: 2.67rem">
+            <img src = "img/ic-person.png" alt = "">
+            <input id="phone" type = "text" placeholder="请输入手机号码" required>
+        </div>
+        
+        <div class="flex input-login">
+            <img src = "img/ic-number.png" alt = "">
+            <input id="verify-input" type = "text" placeholder="请输入验证码" required>
+            <div id="verify" class="getVerify getVerify-gray" onclick="getVerify()">获取验证码</div>
+        </div>
+        
+        <div class="flex input-login">
+            <img src = "img/ic-pwd.png" alt = "">
+            <input id="firstPwd" type = "password" placeholder="请输入登录密码" required>
+        </div>
+        
+        <div class="flex input-login" style="margin-bottom: 1.62rem">
+            <img src = "img/ic-pwd.png" alt = "">
+            <input id="secondPwd" type = "password" placeholder="请再次输入登录密码" required>
+        </div>
+        
+        
+        <div class="btn-main" onclick="next()">重设密码</div>
+        
+    
+    </div>
+    
+</body>
+</html>
+
+<script>
+    var phone = $('#phone');
+    var verify = $('#verify');
+    var firstPwd = $('#firstPwd');
+    var secondPwd = $('#secondPwd');
+
+    function next() {
+        if (isnull(phone.val())) {
+            toast("请先输入手机号码");
+            return
+        }
+        if (!isPhoneNum(phone.val())){
+            toast("手机号码格式不正确，请重新输入");
+            return
+        }
+
+        if (isnull($('#verify-input').val())) {
+            toast("请先输入验证码");
+            return
+        }
+        if (isnull(firstPwd.val())) {
+            toast("请先输入登录密码");
+            return
+        }
+        if (isnull(secondPwd.val())) {
+            toast("请再次输入登录密码");
+            return
+        }
+
+        if (firstPwd.val() != secondPwd.val()) {
+            toast("两次输入的密码不一致，请重新核对");
+            return
+        }
+
+        //todo 重设密码
+        window.location.href = 'index.html';
+    }
+
+    //监听手机号码输入框值的变化
+    phone.bind('input propertychange', function() {
+        if (isPhoneNum(phone.val())){
+            verify.removeClass('getVerify-gray')
+        }else {
+            if(!verify.hasClass('getVerify-gray')) {
+                verify.addClass('getVerify-gray')
+            }
+        }
+    });
+
+    function getVerify() {
+        if (verify.hasClass('getVerify-gray')) {
+            toast("请先输入手机号码")
+        }else{
+            //todo 获取验证码逻辑
+            invokeSettime(verify);
+            toast("获取验证码")
+        }
+    }
+    
+</script>
