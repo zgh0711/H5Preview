@@ -14,7 +14,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
-import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.FileUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
@@ -25,10 +24,7 @@ import com.joker.annotation.PermissionsNonRationale;
 import com.joker.api.Permissions4M;
 import com.preview.android.R;
 import com.preview.android.base.BaseActivity;
-import com.preview.android.constant.Urls;
 import com.preview.android.event.EventCenter;
-import com.preview.android.model.ShareEntity;
-import com.preview.android.update.UpdataService;
 import com.preview.android.util.ImageUtil;
 import com.preview.android.util.MyUtils;
 import com.preview.android.view.TitleView;
@@ -38,8 +34,6 @@ import com.tencent.smtt.sdk.WebView;
 import com.tencent.smtt.sdk.WebViewClient;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author ZGH
@@ -78,20 +72,13 @@ public class WebActivity extends BaseActivity {
     protected void initContentView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_web);
         setStatusBarColor(this, getResources().getColor(R.color.colorPrimary), 0);
-        checkUpdate();
     }
 
     @Override
     protected void initView() {
         initTitleView();
 
-        //在请求页面时加入header，让服务器知道是来自哪种客户端
-        final Map<String, String> headers = new HashMap<String, String>();
-        headers.put("androidapp", "true");
-        headers.put("App-Port", "camit.android");
-
         webView = findViewById(R.id.webView);
-//        webView.loadUrl(Urls.BASE_URL,headers);
         webView.loadUrl("file:///android_asset/CreditCard/index.html");
 
         webView.setWebViewClient(new WebViewClient(){
@@ -105,7 +92,7 @@ public class WebActivity extends BaseActivity {
                 } else if (url.startsWith("openapp.jd")) {
                     isAppInstalled(view, url, JD);
                 } else {
-                    webView.loadUrl(url,headers);
+                    webView.loadUrl(url);
                 }
                 return true;
             }
@@ -283,58 +270,9 @@ public class WebActivity extends BaseActivity {
         builder.show();
     }
 
-    /**
-     * 检查是否需要更新
-     */
-    private void checkUpdate() {
-        int localVer = AppUtils.getAppVersionCode();
-        int remoteVer = Urls.VER_Code;
-        if (remoteVer > localVer) {
-            update();
-        }
-    }
-
-    private void update() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("发现新版本，是否更新");
-        builder.setPositiveButton("是", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                if (!TextUtils.isEmpty(Urls.VER_URL)) {
-                    UpdataService.startService(WebActivity.this, Urls.VER_URL);
-                }
-            }
-        });
-        builder.setNegativeButton("否", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
-        });
-        builder.show();
-    }
-
     private void initTitleView() {
         titleView = findViewById(R.id.titleView);
         titleView.getCenter_tv().setSingleLine();
-        titleView.getRight_tv().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                share();
-            }
-        });
-    }
-
-    private void share() {
-        ShareEntity share;
-        // TODO: 需要一个图片地址和文字介绍
-        String imgUrl = "http://www.baidu.com";
-        if (!TextUtils.isEmpty(shareTitle) && !TextUtils.isEmpty(shareUrl)) {
-            share = new ShareEntity(shareTitle, shareUrl, shareIntro, imgUrl);
-            MyUtils.showShare(WebActivity.this, share);
-        } else {
-            ToastUtils.showShort("内容不全，无法分享");
-        }
     }
 
     @Override
